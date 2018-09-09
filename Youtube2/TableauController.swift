@@ -21,6 +21,7 @@ class TableauController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.delegate = self       // = UITableViewDelegate
         tableView.dataSource = self
         ajouterChanson()
+        title = "Mes vidéos préférées"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {       // FONCTION OBLIGATOIRE pour se conformer aux protocoles
@@ -39,7 +40,7 @@ class TableauController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {      // Hauteur des cellules
-        return 170
+        return 130
     }
     
     func ajouterChanson() {
