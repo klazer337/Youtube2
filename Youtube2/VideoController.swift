@@ -28,7 +28,5 @@ class VideoController: UIViewController {
             let requete = URLRequest(url: url)
             webView.load(requete)
         }
-        
     }
-
 }
