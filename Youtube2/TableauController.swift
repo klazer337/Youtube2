@@ -12,21 +12,34 @@ class TableauController: UIViewController, UITableViewDelegate, UITableViewDataS
 
     @IBOutlet weak var tableView: UITableView!
     
-    
+    var chansons = [Chanson]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self       // = UITableViewDelegate
         tableView.dataSource = self
+        ajouterChanson()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {       // FONCTION OBLIGATOIRE pour se conformer aux protocoles
-        return 3
+        return chansons.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {   //   Quelle cellule renvoyer ou peupler - FONCTION OBLIGATOIRE
         return UITableViewCell()
+    }
+    
+    func ajouterChanson() {
+        chansons = [Chanson]()
+        let cool = Chanson(artiste: "Casseurs Flowters", titre: "Ils sont cools", code: "dq6G2YWoRqA")
+        chansons.append(cool)
+        let bien = Chanson(artiste: "Orelsan", titre: "Tout ba bien", code: "2bjk26RwjyU")
+        chansons.append(bien)
+        let san = Chanson(artiste: "Orelsan", titre: "San", code: "PejyoeG_TmA")
+        chansons.append(san)
+        
+        tableView.reloadData()  // rechargement des données // mise à jour du tableview
     }
 
 }
