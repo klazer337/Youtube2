@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,6 +22,43 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fvl-qK-hbO">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChansonCell" rowHeight="172" id="kii-bR-yUj" customClass="ChansonCell" customModule="Youtube2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="172"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kii-bR-yUj" id="tV8-eO-fW6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="171.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="zGj-DC-DEc">
+                                                    <rect key="frame" x="23" y="11" width="150" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="EnL-9i-ozk"/>
+                                                        <constraint firstAttribute="height" constant="150" id="Lce-q1-Qbe"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXE-lT-gag">
+                                                    <rect key="frame" x="181" y="5" width="194" height="161.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="YXE-lT-gag" secondAttribute="bottom" constant="5" id="2Hb-qQ-ZGw"/>
+                                                <constraint firstItem="YXE-lT-gag" firstAttribute="leading" secondItem="zGj-DC-DEc" secondAttribute="trailing" constant="8" id="NlF-SQ-fM8"/>
+                                                <constraint firstItem="zGj-DC-DEc" firstAttribute="centerY" secondItem="tV8-eO-fW6" secondAttribute="centerY" id="XLf-ts-MwS"/>
+                                                <constraint firstItem="YXE-lT-gag" firstAttribute="top" secondItem="tV8-eO-fW6" secondAttribute="top" constant="5" id="pEe-kL-SOV"/>
+                                                <constraint firstItem="zGj-DC-DEc" firstAttribute="leading" secondItem="tV8-eO-fW6" secondAttribute="leadingMargin" constant="8" id="sXk-rc-esP"/>
+                                                <constraint firstAttribute="trailing" secondItem="YXE-lT-gag" secondAttribute="trailing" id="ucj-Uc-WjJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artisteEtTitreLabel" destination="YXE-lT-gag" id="uIW-it-joe"/>
+                                            <outlet property="miniature" destination="zGj-DC-DEc" id="sdC-4J-Vvi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,4 +98,7 @@
             <point key="canvasLocation" x="-62" y="-52"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="960" height="553"/>
+    </resources>
 </document>
